@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "c278677a-75b3-4244-8c84-64b85aad88b5"
+    "analytics": "97dbcbe3-72de-4a04-a7d4-fcfbc4ab1314"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "apm": {
+    "APM-New": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -15,12 +15,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "pm",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apm",
+            "outputPath": "dist/APM-New",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,8 +28,7 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/api"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -69,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "apm:build"
+            "browserTarget": "APM-New:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "apm:build:production"
+              "browserTarget": "APM-New:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "apm:build"
+            "browserTarget": "APM-New:build"
           }
         },
         "test": {
@@ -117,16 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "apm:serve"
+            "devServerTarget": "APM-New:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "apm:serve:production"
+              "devServerTarget": "APM-New:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "apm"
+  "defaultProject": "APM-New"
 }
