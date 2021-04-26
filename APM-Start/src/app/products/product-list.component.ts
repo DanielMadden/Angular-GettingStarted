@@ -4,13 +4,12 @@ import { IProduct } from "./product";
 import { ProductService } from "./product.service";
 
 @Component({
-  selector: 'pm-products',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) { }
 
   pageTitle: string = 'Product List';
   imageWidth: number = 50;
@@ -36,7 +35,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   performFilter(filterBy: string): IProduct[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.products.filter((product: IProduct) => product.productName.toLocaleLowerCase().includes(filterBy));
-}
+  }
 
   toggleImage(): void {
     this.showImage = !this.showImage;
